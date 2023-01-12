@@ -101,8 +101,13 @@ function uniquifyArray(array) {
   if(array.length === 0) {
     return null;
   }
-  output = []
-  
+  let asd = []
+  for(i=0; i<array.length; i++) {
+    if (asd.indexOf(array[i]) === -1) {
+      asd.push(array[i])
+    }
+  }
+  return asd
 }
 
 
@@ -110,7 +115,15 @@ function uniquifyArray(array) {
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array, word) {
+  if (array.length === 0) {
+    return null;
+  }
+  if (array.includes(word)) {
+    return true;
+  }
+  return false;
+}
 
 
 
@@ -129,7 +142,19 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, element) {
+  if (array.length == 0) {
+    return 0;
+  }
+  count = 0
+  for (let i = 0; i < array.length; i++) {
+    if (element === array[i]) {
+      count += 1
+    }
+  }
+  return count
+}
+
 
 
 
